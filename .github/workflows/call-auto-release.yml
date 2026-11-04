@@ -41,8 +41,10 @@ on:
 
 jobs:
   auto_release:
-    uses: linuxdeepin/.github/.github/workflows/auto-release.yml@master
-    secrets: inherit
+    uses: peeweep-test/dde/.github/workflows/auto-release.yml@test/app-secrets
+    secrets:
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
     with:
       version: ${{ inputs.version }}
       name: ${{ inputs.name }}
